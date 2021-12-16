@@ -29,3 +29,7 @@ New-NetFirewallRule -DisplayName "Siemens_2308" -Direction Inbound -LocalPort 23
 New-NetFirewallRule -DisplayName "Siemens_5001" -Direction Inbound -LocalPort 5001 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "Siemens_5002" -Direction Inbound -LocalPort 5002 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "Siemens_50523" -Direction Inbound -LocalPort 50523 -Protocol TCP -Action Allow
+
+#Vijeo Designer
+New-NetFirewallRule -DisplayName "Vijeo Designer Control" -Direction Inbound -LocalPort 6001 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "Vijeo Designer Download" -Direction Inbound -LocalPort 13777 -Protocol TCP -Action Allow
