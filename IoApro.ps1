@@ -36,3 +36,6 @@ New-NetFirewallRule -DisplayName "Vijeo Designer Download" -Direction Inbound -L
 
 #SoMachine
 New-NetFirewallRule -DisplayName "SoMachine" -Direction Inbound -LocalPort 1105 -Protocol TCP -Action Allow
+
+#Secomea
+New-NetFirewallRule -DisplayName "Secomea" -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow
