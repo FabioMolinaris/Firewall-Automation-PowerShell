@@ -30,6 +30,15 @@ New-NetFirewallRule -DisplayName "Siemens_5001" -Direction Inbound -LocalPort 50
 New-NetFirewallRule -DisplayName "Siemens_5002" -Direction Inbound -LocalPort 5002 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "Siemens_50523" -Direction Inbound -LocalPort 50523 -Protocol TCP -Action Allow
 
+#SIEMENS WINCC 
+New-NetFirewallRule -DisplayName "WCCILScsService" -Group "SIMATIC WinCC UA" -Direction Inbound -Program  "C:\Program Files\Siemens\Automation\WinCCUnified\bin\WCCILscs.exe" -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "WinCC RTIL data" -Group "SIMATIC WinCC UA" -Direction Inbound -Program  "C:\Program Files\Siemens\Automation\WinCCUnified\bin\WCCILdata.exe" -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "WinCC RTIL dist" -Group "SIMATIC WinCC UA" -Direction Inbound -Program  "C:\Program Files\Siemens\Automation\WinCCUnified\bin\WCCILdist.exe" -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "WinCC RTIL event" -Group "SIMATIC WinCC UA" -Direction Inbound -Program  "C:\Program Files\Siemens\Automation\WinCCUnified\bin\WCCILevent.exe" -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "WinCC RTIL proxy" -Group "SIMATIC WinCC UA" -Direction Inbound -Program  "C:\Program Files\Siemens\Automation\WinCCUnified\bin\WCCILproxy.exe" -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "WinCC RTIL redu" -Group "SIMATIC WinCC UA" -Direction Inbound -Program  "C:\Program Files\Siemens\Automation\WinCCUnified\bin\WCCILredu.exe" -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "WinCC VCS" -Group "SIMATIC WinCC UA" -Direction Inbound -Program  "C:\Program Files\Siemens\Automation\WinCCUnified\bin\GfxRTS.exe" -Protocol TCP -Action Allow
+
 #Vijeo Designer
 New-NetFirewallRule -DisplayName "Vijeo Designer Control" -Direction Inbound -LocalPort 6001 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "Vijeo Designer Download" -Direction Inbound -LocalPort 13777 -Protocol TCP -Action Allow
