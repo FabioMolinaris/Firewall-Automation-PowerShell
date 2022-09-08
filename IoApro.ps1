@@ -48,3 +48,7 @@ New-NetFirewallRule -DisplayName "SoMachine" -Direction Inbound -LocalPort 1105 
 
 #Secomea
 New-NetFirewallRule -DisplayName "Secomea" -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow
+
+#AVEVA Enterprise Licensing Platform
+New-NetFirewallRule -DisplayName "AVEVA_Server" -Direction Inbound -LocalPort 55555 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "AVEVA_Agent" -Direction Inbound -LocalPort 59200 -Protocol TCP -Action Allow
