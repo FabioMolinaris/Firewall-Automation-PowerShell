@@ -55,3 +55,7 @@ New-NetFirewallRule -DisplayName "AVEVA_Agent" -Direction Inbound -LocalPort 592
 New-NetFirewallRule -DisplayName "AVEVA_Historian" -Direction Inbound -LocalPort 32568 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "AVEVA_Insight" -Direction Inbound -LocalPort 32569 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "AVEVA_Search" -Direction Inbound -LocalPort 32570 -Protocol TCP -Action Allow
+
+#DCOM OPC-UA Siemens https://support.industry.siemens.com/cs/document/109768431/which-dcom-settings-must-be-checked-for-wincc-(v7-and-professional)-with-opc-da-if-the-connection-between-server-and-client-does-not-work-
+New-NetFirewallRule -DisplayName "DCOMIn" -Direction Inbound -LocalPort 135 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "DCOMOut" -Direction Outbound -LocalPort 135 -Protocol TCP -Action Allow
